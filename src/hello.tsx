@@ -1,8 +1,10 @@
 //import * as React from 'react'
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function Hello() {
-  return <div>
-    <h1>Hello React</h1>
-  </div>
+  const [name, setName] = useState('');
+  return [
+    <h1>Hello {name}</h1>,
+    <input type='text' value={name} onChange={event => setName(event.target.value)}/>,
+  ]
 };
